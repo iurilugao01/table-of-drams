@@ -6,6 +6,10 @@ const routes = [
     path: "/",
     component: () => import("../views/HomeView.vue"),
   },
+  {
+    path: "/character/create",
+    component: () => import("../views/CreateCharacter.vue"),
+  },
 ];
 
 declare const router: Router;
