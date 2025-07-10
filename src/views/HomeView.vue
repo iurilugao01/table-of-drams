@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import type { Character } from "../types/interfaces";
 import { useRouter } from "vue-router";
 import type { Router } from "vue-router";
@@ -22,7 +21,7 @@ const createCharacter = () => {
     </div>
     <button
       @click="createCharacter"
-      class="border-s bg-red-500 dark:bg-red-800 text-gray-950 dark:text-gray-50 rounded-2xl flex items-center p-3 gap-2"
+      class="border-s bg-red-500 dark:bg-red-800 text-gray-950 dark:text-gray-50 font-bold rounded-2xl flex items-center p-3 gap-2"
     >
       <span>Nova Ficha</span>
       <i class="bi bi-plus-circle"></i>

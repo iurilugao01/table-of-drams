@@ -8,7 +8,12 @@ const routes = [
   },
   {
     path: "/character/create",
-    component: () => import("../views/CreateCharacter.vue"),
+    component: () => import("../views/CreateCharacterView.vue"),
+  },
+  {
+    Path: "/character/:id",
+    component: () => import("../views/CharacterView.vue"),
+    props: true,
   },
 ];
 
