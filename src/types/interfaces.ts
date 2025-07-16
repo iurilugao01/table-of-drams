@@ -7,9 +7,23 @@ interface Character {
   createdAt?: string;
 }
 interface CharacterData extends Character {
-  layouts: StattsLayout[] | ExpertiseLayout[] | ListLayout[] | NotesLAyout[];
+  levelBonus: {
+    key: string;
+    value: number;
+  }[];
+  layouts: {
+    stattsLayout: StattsLayout;
+    expertiseLayout: ExpertiseLayout;
+    listLayout: ListLayout[];
+    notesLayout: NotesLayout[];
+  };
 }
-interface StattsLayout {
+
+interface Layout {
+  id: number;
+  position: number;
+}
+interface StattsLayout extends Layout {
   sttats: {
     key: string;
     value: number;
@@ -20,14 +34,14 @@ interface StattsLayout {
     color: string;
   };
 }
-interface ExpertiseLayout {
+interface ExpertiseLayout extends Layout {
   expertises: {
     key: string;
     primaryValue: number;
     secondaryValue: number;
   }[];
 }
-interface ListLayout {
+interface ListLayout extends Layout {
   key: string;
   extraInfos: {
     key: string;
@@ -42,7 +56,7 @@ interface ListLayout {
     }[];
   }[];
 }
-interface NotesLAyout {
+interface NotesLayout extends Layout {
   key: string;
   extraInfos: {
     key: string;
